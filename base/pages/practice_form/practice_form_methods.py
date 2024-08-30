@@ -9,8 +9,6 @@ from src.config.expectations import Wait
 
 
 class PracticeFormMethods():
-    def __init__(self, page: PracticeFormPage):
-        super().__init__(page)
     @staticmethod
     def fill_name_input(practice_form: PracticeFormPage):
         errors = []
@@ -136,6 +134,8 @@ class PracticeFormMethods():
 
         except AssertionError as e:
             errors.append(str(e))
+
+
 
 
 
