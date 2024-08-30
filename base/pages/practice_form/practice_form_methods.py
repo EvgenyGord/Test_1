@@ -2,13 +2,13 @@ import time
 from idlelib.iomenu import errors
 
 import allure
-from playwright.sync_api import Page
+
 from base.pages.practice_form.practice_form_page import PracticeFormPage
 from src.config.expectations import Wait
 
 
+class PracticeFormMethods:
 
-class PracticeFormMethods():
     @staticmethod
     def fill_name_input(practice_form: PracticeFormPage):
         errors = []
@@ -19,6 +19,7 @@ class PracticeFormMethods():
 
         except AssertionError as e:
             errors.append(str(e))
+
 
     @staticmethod
     def fill_email_input(practice_form: PracticeFormPage):
@@ -47,7 +48,7 @@ class PracticeFormMethods():
         try:
             with allure.step("Ввод номера телефона"):
                 practice_form.phone.fill(practice_form.phone_text)
-
+                time.sleep(4)
 
         except AssertionError as e:
             errors.append(str(e))
@@ -67,6 +68,7 @@ class PracticeFormMethods():
         except AssertionError as e:
             errors.append(str(e))
 
+
     @staticmethod
     def fill_subjects(practice_form: PracticeFormPage):
         errors = []
@@ -79,6 +81,7 @@ class PracticeFormMethods():
         except AssertionError as e:
             errors.append(str(e))
 
+
     @staticmethod
     def fill_hobbies(practice_form: PracticeFormPage):
         errors = []
@@ -87,16 +90,6 @@ class PracticeFormMethods():
                 practice_form.hobbies_sports.click()
                 practice_form.hobbies_reading.click()
                 practice_form.hobbies_music.click()
-
-        except AssertionError as e:
-            errors.append(str(e))
-
-    @staticmethod
-    def fill_load_image_picture(practice_form: PracticeFormPage):
-        errors = []
-        try:
-            with allure.step("Загрузка изображения"):
-                practice_form.load_files_pictures.load_file(practice_form.path_image)
 
         except AssertionError as e:
             errors.append(str(e))
@@ -130,20 +123,7 @@ class PracticeFormMethods():
         try:
             with allure.step("Нажатие на кнопку Submit"):
                 practice_form.submit_button.click()
-
-
-        except AssertionError as e:
-            errors.append(str(e))
-
-
-    @staticmethod
-    def screen_results(page: Page, filename: str):
-        errors = []
-        try:
-            with allure.step("Нажатие на кнопку Submit"):
-                screenshot_path = f"../../src/image/{filename}.png"
-                page.screenshot(path=screenshot_path, timeout=60000)
-                allure.attach.file(screenshot_path, name=filename, attachment_type=allure.attachment_type.PNG)
+                time.sleep(5)
 
         except AssertionError as e:
             errors.append(str(e))

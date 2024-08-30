@@ -10,12 +10,14 @@ class BasePage:
         self.page = page
         self.context = context
 
+
     @staticmethod
     def open_page(page: Page, url: str) -> None:
         try:
             page.goto(url, timeout=5000, wait_until='domcontentloaded')
         except TimeoutError:
             print("Тест дождался пока страница загрузится, продолжился и выполнился")
+
 
     class Base:
         def __init__(self, browser, url):
@@ -70,3 +72,4 @@ class BasePage:
 
         def wait_for_element(self, locator, timeout=None):
             return self.browser.wait_for_selector(locator, timeout=timeout)
+
