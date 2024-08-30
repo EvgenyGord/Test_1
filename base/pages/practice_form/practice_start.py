@@ -23,9 +23,11 @@ class PracticeStart:
                 PracticeFormMethods.fill_date_of_birth(practice_form)
                 PracticeFormMethods.fill_subjects(practice_form)
                 PracticeFormMethods.fill_hobbies(practice_form)
+                PracticeFormMethods.fill_load_image_picture(practice_form)
                 PracticeFormMethods.fill_current_address(practice_form)
                 PracticeFormMethods.fill_state_and_city(practice_form)
                 PracticeFormMethods.button_submit(practice_form)
+                PracticeFormMethods.screen_results(page, practice_form.screen_result)
 
 
         except AssertionError as e:

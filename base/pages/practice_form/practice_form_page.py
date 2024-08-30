@@ -4,7 +4,7 @@ from base.page_factory.button import Button
 from base.page_factory.input import Input
 
 
-class PracticeFormPage:
+class PracticeFormPage():
     def __init__(self, page: Page) -> None:
         self.page = page
 
@@ -25,13 +25,12 @@ class PracticeFormPage:
         self.hobbies_sports = Button(page, locator='//*[@id="hobbies-checkbox-1"]/..', name='Выбор хобби -> спорт')
         self.hobbies_reading = Button(page, locator='//*[@id="hobbies-checkbox-2"]/..', name='Выбор хобби -> чтение')
         self.hobbies_music = Button(page, locator='//*[@id="hobbies-checkbox-3"]/..', name='Выбор хобби -> музыка')
+        self.load_files_pictures = Input (page, locator='//*[@id="uploadPicture"]', name= 'Загрузка файлов изображений')
         self.current_address = Input(page, locator='//*[@id="currentAddress"]', name='Адрес')
-
         self.state = Button(page, locator='//*[@id="stateCity-wrapper"]//div[contains(text(), "Select State")]', name='Государство')
         self.state_choice = Button(page, locator='//*[@id="react-select-3-option-0"]', name='Выбор государства')
         self.city = Button(page, locator='//*[@id="stateCity-wrapper"]//div[contains(text(), "Select City")]', name='Город')
         self.city_choice = Button(page, locator='//*[@id="react-select-4-option-0"]', name='Выбор города')
-
         self.submit_button = Button(page, locator='//*[@id="submit"]', name='Кнопка Submit')
 
 
@@ -51,6 +50,7 @@ class PracticeFormPage:
         self.Wait_hobbies_sports = '//*[@id="hobbies-checkbox-1"]'
         self.Wait_hobbies_reading = '//*[@id="hobbies-checkbox-2"]'
         self.Wait_hobbies_music = '//*[@id="hobbies-checkbox-3"]'
+        self.Wait_load_files_pictures = '//*[@id="uploadPicture"]'
         self.Wait_current_address = '//*[@id="currentAddress"]'
         self.Wait_state = '//*[@id="stateCity-wrapper"]//div[contains(text(), "Select State")]'
         self.Wait_state_choice = '//*[@id="react-select-3-option-0"]'
@@ -70,4 +70,5 @@ class PracticeFormPage:
         self.year='2002'
         self.subjects_text='English'
         self.current_address_text='Krasnodar'
-
+        self.path_image = './src/image/qa_auto.jpg'
+        self.screen_result = "screen_result"
