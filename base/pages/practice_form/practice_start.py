@@ -27,7 +27,7 @@ class PracticeStart:
                 PracticeFormMethods.fill_current_address(practice_form)
                 PracticeFormMethods.fill_state_and_city(practice_form)
                 PracticeFormMethods.button_submit(practice_form)
-                PracticeFormMethods.screen_results(page, practice_form.screen_result)
+                PracticeFormMethods.screen_results(page, practice_form.screen_results)
 
 
         except AssertionError as e:
