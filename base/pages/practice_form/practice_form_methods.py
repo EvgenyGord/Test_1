@@ -142,7 +142,7 @@ class PracticeFormMethods:
     def screen_results(page: Page, filename: str):
         errors = []
         try:
-            with allure.step("Нажатие на кнопку Submit"):
+            with allure.step("Скриншот результата"):
                 screenshot_path = f"../../src/image/{filename}.png"
                 page.screenshot(path=screenshot_path, timeout=60000)
                 allure.attach.file(screenshot_path, name=filename, attachment_type=allure.attachment_type.PNG)
