@@ -8,3 +8,11 @@
 ./allureress
 /allureress/
 /allure-results
+/idea
+/pytest_cache/
+/.allureress
+.idea
+/idea/
+/sys/
+/sys
+.sys

@@ -76,3 +76,14 @@ class Component(ABC):
         with allure.step(f'Проверка неактивности {self.type_of} "{self.name}"'):
             locator = self.get_locator(**kwargs)
             expect(locator).to_be_disabled()
+
+    """Дописал свою функцию нажатия правой кнопкой мыши"""
+
+    def click_right(self, **kwargs) -> None:
+        """
+        Нажимает на элемент компонента.
+        """
+        with allure.step(f'Нажимаем на {self.type_of} с именем "{self.name}"'):
+            self.should_be_visible()
+            locator = self.get_locator(**kwargs)
+            locator.click(button="right")
