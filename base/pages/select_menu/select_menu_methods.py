@@ -14,7 +14,9 @@ class Select_Menu_Methods:
     def click_select_value(select_menu: Select_Menu):
         errors = []
         try:
+            Wait.set_page(select_menu.page)
             with allure.step("Нажатие на селектор Select Value"):
+                Wait.visible(select_menu.Wait_select_value)
                 select_menu.select.nth(0).click()
 
         except AssertionError as e:
@@ -24,7 +26,9 @@ class Select_Menu_Methods:
     def click_select_one(select_menu: Select_Menu):
         errors = []
         try:
+            Wait.set_page(select_menu.page)
             with allure.step("Нажатие на селектор Select One"):
+                Wait.visible(select_menu.Wait_select_title)
                 select_menu.select.nth(1).click()
 
         except AssertionError as e:
@@ -34,7 +38,9 @@ class Select_Menu_Methods:
     def click_select_xxx(select_menu: Select_Menu):
         errors = []
         try:
+            Wait.set_page(select_menu.page)
             with allure.step("Нажатие на селектор Multiselect drop down"):
+                Wait.visible(select_menu.Wait_select_xxx)
                 select_menu.select.nth(2).click()
 
         except AssertionError as e:

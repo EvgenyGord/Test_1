@@ -22,7 +22,7 @@ class TextboxPage:
     def _init_wait_locators(self):
         """Локаторы ожидания"""
         self.Wait_full_name = '//*[@id="userName"]'
-        self.Wait_email = '//*[@id="lastName"]'
+        self.Wait_email = '//*[@id="userEmail"]'
         self.Wait_current_address = '//*[@id="currentAddress"]'
         self.Wait_permanent_address = '//*[@id="permanentAddress"]'
         self.Wait_button_submit = '//*[@id="submit"]'

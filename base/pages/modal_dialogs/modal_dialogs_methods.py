@@ -14,7 +14,9 @@ class ModalDialogs_Methods:
     def open_small_modal(modal_dialogs: ModalDialogs):
         errors = []
         try:
+            Wait.set_page(modal_dialogs.page)
             with allure.step("Нажатие на кнопку Small Modal"):
+                Wait.visible(modal_dialogs.Wait_small_modal)
                 modal_dialogs.small_modal.click()
 
         except AssertionError as e:
@@ -24,7 +26,9 @@ class ModalDialogs_Methods:
     def close_small_modal(modal_dialogs: ModalDialogs):
         errors = []
         try:
+            Wait.set_page(modal_dialogs.page)
             with allure.step("Нажатие на кнопку 'Close' от Small Modal"):
+                Wait.visible(modal_dialogs.Wait_close_small_modal)
                 modal_dialogs.close_small_modal.click()
 
         except AssertionError as e:
@@ -34,7 +38,9 @@ class ModalDialogs_Methods:
     def open_large_modal(modal_dialogs: ModalDialogs):
         errors = []
         try:
+            Wait.set_page(modal_dialogs.page)
             with allure.step("Нажатие на кнопку Large Modal"):
+                Wait.visible(modal_dialogs.Wait_large_modal)
                 modal_dialogs.large_modal.click()
 
         except AssertionError as e:
@@ -44,7 +50,9 @@ class ModalDialogs_Methods:
     def close_large_modal(modal_dialogs: ModalDialogs):
         errors = []
         try:
+            Wait.set_page(modal_dialogs.page)
             with allure.step("Нажатие на кнопку 'Close' от Large Modal"):
+                Wait.visible(modal_dialogs.Wait_close_large_modal)
                 modal_dialogs.close_large_modal.click()
 
         except AssertionError as e:

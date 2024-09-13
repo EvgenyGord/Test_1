@@ -13,8 +13,10 @@ class TextboxMethods:
     def fill_full_name(textbox: TextboxPage):
         errors = []
         try:
+            Wait.set_page(textbox.page)
             with allure.step("Заполнение полного имени"):
                 textbox.full_name.fill(textbox.full_name_text)
+                Wait.visible(textbox.Wait_full_name)
 
         except AssertionError as e:
             TextboxMethods._handle_error(errors, e)
@@ -23,8 +25,10 @@ class TextboxMethods:
     def fill_email(textbox: TextboxPage):
         errors = []
         try:
+            Wait.set_page(textbox.page)
             with allure.step("Заполнение почты -> Email"):
                 textbox.email.fill(textbox.email_text)
+                Wait.visible(textbox.Wait_email)
 
         except AssertionError as e:
             TextboxMethods._handle_error(errors, e)
@@ -33,8 +37,10 @@ class TextboxMethods:
     def fill_current_address(textbox: TextboxPage):
         errors = []
         try:
+            Wait.set_page(textbox.page)
             with allure.step("Заполнение текущего адреса -> Сurrent Address"):
                 textbox.current_address.fill(textbox.current_address_text)
+                Wait.visible(textbox.Wait_current_address)
 
         except AssertionError as e:
             TextboxMethods._handle_error(errors, e)
@@ -43,8 +49,10 @@ class TextboxMethods:
     def fill_permanent_address(textbox: TextboxPage):
         errors = []
         try:
+            Wait.set_page(textbox.page)
             with allure.step("Заполнение постоянного адреса -> Permanent Address"):
                 textbox.permanent_address.fill(textbox.permanent_address_text)
+                Wait.visible(textbox.Wait_permanent_address)
 
         except AssertionError as e:
             TextboxMethods._handle_error(errors, e)

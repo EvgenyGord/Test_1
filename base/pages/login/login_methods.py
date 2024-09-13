@@ -14,7 +14,9 @@ class LoginMethods:
     def fill_login(login: Login):
         errors = []
         try:
+            Wait.set_page(login.page)
             with allure.step("Ввод логина"):
+                Wait.set_page(login.Wait_login)
                 login.login.fill(login.login_text)
 
         except AssertionError as e:
@@ -24,7 +26,9 @@ class LoginMethods:
     def fill_password(login: Login):
         errors = []
         try:
+            Wait.set_page(login.page)
             with allure.step("Ввод пароля"):
+                Wait.set_page(login.Wait_password)
                 login.password.fill(login.password_text)
 
         except AssertionError as e:
@@ -34,7 +38,9 @@ class LoginMethods:
     def click_btn_login(login: Login):
         errors = []
         try:
+            Wait.set_page(login.page)
             with allure.step("Нажатие на кнопку 'Login'"):
+                Wait.set_page(login.Wait_btn_login)
                 login.btn_login.click()
 
         except AssertionError as e:

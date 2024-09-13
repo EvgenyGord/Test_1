@@ -93,7 +93,9 @@ class Date_Picker_Methods:
     def click_date_and_time_month_choice(date_picker: Date_Picker):
         errors = []
         try:
+            Wait.set_page(date_picker.page)
             with allure.step("Выбор месяца date_and_time"):
+                Wait.visible(date_picker.Wait_date_and_time_month_choice)
                 date_picker.date_and_time_month_choice.nth(9).click()
 
         except AssertionError as e:
@@ -113,7 +115,9 @@ class Date_Picker_Methods:
     def click_date_and_time_year_choice(date_picker: Date_Picker):
         errors = []
         try:
+            Wait.set_page(date_picker.page)
             with allure.step("Выбор года date_and_time"):
+                Wait.visible(date_picker.Wait_date_and_time_year_choice)
                 date_picker.date_and_time_year_choice.nth(9).click()
 
         except AssertionError as e:
@@ -133,7 +137,9 @@ class Date_Picker_Methods:
     def click_date_and_time_hour(date_picker: Date_Picker):
         errors = []
         try:
+            Wait.set_page(date_picker.page)
             with allure.step("Выбор времени date_and_time"):
+                Wait.set_page(date_picker.Wait_date_and_time_number_choice)
                 date_picker.date_and_time_hour_choice.nth(0).click()
 
         except AssertionError as e:

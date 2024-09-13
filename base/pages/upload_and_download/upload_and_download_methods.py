@@ -13,7 +13,9 @@ class Upload_and_Download_Methods:
     def download(upload_and_download: Upload_and_Download_Page):
         errors = []
         try:
+            Wait.set_page(upload_and_download.page)
             with allure.step("Скачивание файла"):
+                Wait.visible(upload_and_download.Wait_download)
                 upload_and_download.download.click()
 
         except AssertionError as e:
@@ -24,7 +26,9 @@ class Upload_and_Download_Methods:
     def upload(upload_and_download: Upload_and_Download_Page):
         errors = []
         try:
+            Wait.set_page(upload_and_download.page)
             with allure.step("Загрузка файла"):
+                Wait.visible(upload_and_download.Wait_upload)
                 upload_and_download.upload.load_file(upload_and_download.path_image)
         except AssertionError as e:
             Upload_and_Download_Methods._handle_error(errors, e)

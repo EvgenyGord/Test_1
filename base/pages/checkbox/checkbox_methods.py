@@ -13,7 +13,9 @@ class CheckboxMethods:
     def click_home(checkbox: CheckboxPage):
         errors = []
         try:
+            Wait.set_page(checkbox.page)
             with allure.step("Нажатие на чек-бокс всей папки Home"):
+                Wait.visible(checkbox.Wait_home)
                 checkbox.home.click()
 
 
@@ -24,8 +26,10 @@ class CheckboxMethods:
     def click_plus(checkbox: CheckboxPage):
         errors = []
         try:
+            Wait.set_page(checkbox.page)
             with allure.step("Нажатие на +, разворачивание всех чек-боксов"):
                 checkbox.plus.click()
+                Wait.visible(checkbox.Wait_plus)
 
         except AssertionError as e:
             CheckboxMethods._handle_error(errors, e)

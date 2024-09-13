@@ -13,10 +13,10 @@ class RadioButtonMethods:
     def click_radiobutton_yes(radiobutton: RadioButtonPage):
         errors = []
         try:
+            Wait.set_page(radiobutton.page)
             with allure.step("Нажатие на кнопку Yes"):
-
+                Wait.visible(radiobutton.Wait_button_yes)
                 radiobutton.button_yes.click()
-
 
         except AssertionError as e:
             RadioButtonMethods._handle_error(errors, e)

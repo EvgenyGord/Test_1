@@ -4,12 +4,15 @@ from playwright.sync_api import Page
 from base.pages.authorization.authorization_method import AuthorizationMethod
 from base.pages.radiobutton.radiobutton_methods import RadioButtonMethods
 from base.pages.radiobutton.radiobutton_page import RadioButtonPage
+from src.config.expectations import Wait
+
 
 class RadioButtonStart:
     @staticmethod
     def radiobutton(page: Page, radiobutton: RadioButtonPage):
         errors = []
         try:
+
             with allure.step("Авторизация на странице Elements-> Radio Button"):
                 AuthorizationMethod.auth_radiobutton(page)
 

@@ -13,7 +13,9 @@ class ButtonsMethods:
     def button_double_click(buttons: ButtonsPage):
         errors = []
         try:
+            Wait.set_page(buttons.page)
             with allure.step("Нажатие на кнопку для двойного нажатия ЛКМ"):
+                Wait.visible(buttons.Wait_button_double_click)
                 buttons.button_double_click.double_click()
 
         except AssertionError as e:
@@ -23,7 +25,9 @@ class ButtonsMethods:
     def button_right_click(buttons: ButtonsPage):
         errors = []
         try:
+            Wait.set_page(buttons.page)
             with allure.step("Нажатие на кнопку для нажатия ПКМ"):
+                Wait.visible(buttons.Wait_button_right_click)
                 buttons.button_right_click.click_right()
 
         except AssertionError as e:
@@ -33,7 +37,9 @@ class ButtonsMethods:
     def button_click(buttons: ButtonsPage):
         errors = []
         try:
+            Wait.set_page(buttons.page)
             with allure.step("Нажатие на кнопку для одного нажатия ЛКМ"):
+                Wait.visible(buttons.Wait_button_click)
                 buttons.button_click.nth(2).click()
 
         except AssertionError as e:

@@ -14,8 +14,11 @@ class PracticeFormMethods:
     def fill_name_input(practice_form: PracticeFormPage):
         errors = []
         try:
+            Wait.set_page(practice_form.page)
             with allure.step("Заполнение имени и фамилии"):
+                Wait.visible(practice_form.Wait_first_name)
                 practice_form.first_name.fill(practice_form.first_name_text)
+                Wait.visible(practice_form.Wait_last_name)
                 practice_form.last_name.fill(practice_form.last_name_text)
         except AssertionError as e:
             PracticeFormMethods._handle_error(errors, e)
@@ -24,7 +27,9 @@ class PracticeFormMethods:
     def fill_email_input(practice_form: PracticeFormPage):
         errors = []
         try:
+            Wait.set_page(practice_form.page)
             with allure.step("Заполнение Email"):
+                Wait.visible(practice_form.Wait_email)
                 practice_form.email.fill(practice_form.email_text)
         except AssertionError as e:
             PracticeFormMethods._handle_error(errors, e)
